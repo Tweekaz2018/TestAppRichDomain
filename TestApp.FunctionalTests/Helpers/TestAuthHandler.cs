@@ -21,7 +21,7 @@ namespace TestApp.FunctionalTests.Helper
 
         protected override Task<AuthenticateResult> HandleAuthenticateAsync()
         {
-            var claims = new[] { new Claim(ClaimTypes.Name, "2"), new Claim(ClaimTypes.Role, "User") };
+            var claims = new[] { new Claim(ClaimTypes.Name, "Admin@candyshop.tk"), new Claim(ClaimTypes.Role, "Admin") };
             var identity = new ClaimsIdentity(claims, "Test");
             var principal = new ClaimsPrincipal(identity);
             var ticket = new AuthenticationTicket(principal, "Test");

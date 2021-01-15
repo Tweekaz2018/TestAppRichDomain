@@ -62,7 +62,7 @@ namespace TestAppRichDomain.Infrastructure
 
         private static IEnumerable<Basket> GetBaskets()
         {
-            var basket1 = new Basket("username");
+            var basket1 = new Basket("admin@candyshop.tk");
             basket1.AddItem(1, 10, 1);
             basket1.AddItem(2, 5, 1);
             return new List<Basket>() { basket1 };

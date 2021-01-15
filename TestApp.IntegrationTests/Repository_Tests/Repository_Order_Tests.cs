@@ -23,7 +23,7 @@ namespace TestApp.IntegrationTests
         }
 
         [Fact]
-        public async Task Get_Order_First_Or_Defaulr_Test()
+        public async Task Get_Order_First_Or_Default_Test()
         {
             string username = "username";
             var repository = GetRepository();

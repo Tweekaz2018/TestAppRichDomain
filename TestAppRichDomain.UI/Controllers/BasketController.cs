@@ -56,6 +56,7 @@ namespace TestAppRichDomain.UI.Controllers
             if (ModelState.IsValid)
             {
                 await _orderService.CreateOrderAsync(orderRequest.BasketId, orderRequest.Comment, orderRequest.Address);
+                _logger.LogInformation("Made new order from basket", orderRequest.BasketId);
                 return View("OrderSuccess");
             }
             else
