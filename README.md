@@ -4,6 +4,8 @@
 
 Если есть желание не оставлять свой пароль в конфиге, его можно зашифровать через консольное приложение Passwordcrypter. 
 Пароль оттуда достаточно скопировать в appsettings.json, дополнительно расскоментировав 
+
+
 /*,
   
   "Connection": "Server=localhost\\SQLEXPRESS;Database=site;User Id=TestApp;Password=", //connstring without password
