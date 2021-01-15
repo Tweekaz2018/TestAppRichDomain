@@ -11,7 +11,7 @@ namespace TestAppRichDomain.Infrastructure.Config
     {
         public void Configure(EntityTypeBuilder<Basket> builder)
         {
-            var navigation = builder.Metadata.FindNavigation(nameof(Basket.Items));
+            var navigation = builder.Metadata.FindNavigation(nameof(Basket.BasketItems));
             navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
 
             builder.Property(b => b.UserId)

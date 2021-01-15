@@ -1,0 +1,43 @@
+﻿@model ItemModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="col-12">
+    <div class="card">
+        <img class="card-img-top" src="@Model.Image" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">@Model.Description</p>
+            <p class="card-text">Price: @Model.Price</p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (Model.IsAviable)
+                {
+                    <a asp-controller="Basket" asp-action="AddItem" asp-route-itemId="@Model.Id" class="btn btn-outline-dark">Add to cart</a>
+                }
+                else
+                {
+                    <a href="#" class="btn btn-outline-dark disabled">Add to cart</a>
+                }
+            }
+            else
+            {
+                <a asp-controller="Login" asp-action="Index" class="btn btn-outline-danger">Sing In</a>
+            }
+
+            @if (User.IsInRole("Admin"))
+            {
+                if (Model.IsAviable)
+                {
+                    <a asp-controller="Admin" asp-action="ChangeItemState" asp-route-itemId="@Model.Id" asp-route-isAviable="false" class="btn btn-outline-dark">Disable</a>
+                }
+                else
+                {
+                    <a asp-controller="Admin" asp-action="ChangeItemState" asp-route-itemId="@Model.Id" asp-route-isAviable="true" class="btn btn-outline-dark">Make aviable</a>
+                }
+
+            }
+        </div>
+    </div>
+</div>

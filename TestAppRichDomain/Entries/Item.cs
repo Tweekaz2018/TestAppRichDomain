@@ -1,4 +1,6 @@
-﻿namespace TestAppRichDomain.Core.Entries
+﻿using TestAppRichDomain.Shared;
+
+namespace TestAppRichDomain.Core.Entries
 {
     public class Item : BaseEntity
     {
@@ -27,7 +29,7 @@
             IsAviable = true;
         }
 
-        public void SetUbAviable()
+        public void SetUnAviable()
         {
             IsAviable = false;
         }

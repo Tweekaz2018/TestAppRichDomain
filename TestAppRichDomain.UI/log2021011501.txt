@@ -1,0 +1,588 @@
+2021-01-15 01:23:55.006 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:23:56.926 +02:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-01-15 01:23:58.002 +02:00 [INF] Executed DbCommand (1,036ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-01-15 01:23:58.076 +02:00 [INF] User profile is available. Using 'C:\Users\m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-15 01:23:59.715 +02:00 [INF] Migrations
+2021-01-15 01:23:59.739 +02:00 [WRN] 1610594911: Migration_1610594911 (current)
+2021-01-15 01:24:00.098 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/  
+2021-01-15 01:24:00.259 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:24:00.991 +02:00 [INF] Executed DbCommand (113ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-01-15 01:24:01.061 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2021-01-15 01:24:01.067 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2021-01-15 01:24:01.068 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2021-01-15 01:24:01.083 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2021-01-15 01:24:01.090 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:24:01.198 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller TestAppRichDomain.UI.Controllers.HomeController (TestAppRichDomain.UI).
+2021-01-15 01:24:01.213 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI) in 7.0136ms
+2021-01-15 01:24:01.216 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:24:01.225 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'TestAppRichDomain.UI.Controllers.HomeController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-01-15 01:24:01.436 +02:00 [INF] Request finished in 1348.362ms 500 text/html; charset=utf-8
+2021-01-15 01:25:34.253 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:25:36.604 +02:00 [INF] Executed DbCommand (167ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-01-15 01:25:38.403 +02:00 [INF] Executed DbCommand (1,769ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-01-15 01:25:38.485 +02:00 [INF] User profile is available. Using 'C:\Users\m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-15 01:25:41.694 +02:00 [INF] Migrations
+2021-01-15 01:25:41.719 +02:00 [WRN] 1610594911: Migration_1610594911 (current)
+2021-01-15 01:25:43.330 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/  
+2021-01-15 01:25:43.513 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:25:45.088 +02:00 [INF] Executed DbCommand (541ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-01-15 01:25:45.148 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2021-01-15 01:25:45.152 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2021-01-15 01:25:45.153 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2021-01-15 01:25:45.163 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2021-01-15 01:25:45.168 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:25:45.242 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller TestAppRichDomain.UI.Controllers.HomeController (TestAppRichDomain.UI).
+2021-01-15 01:25:45.334 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Description], [i].[Image], [i].[IsAviable], [i].[Price], [i].[Title]
+FROM [Items] AS [i]
+2021-01-15 01:25:45.609 +02:00 [INF] Executing ViewResult, running view Index.
+2021-01-15 01:25:45.852 +02:00 [INF] Executed ViewResult - view Index executed in 258.5688ms.
+2021-01-15 01:25:45.856 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI) in 612.5855ms
+2021-01-15 01:25:45.858 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:25:45.880 +02:00 [INF] Request finished in 2561.3998ms 200 text/html; charset=utf-8
+2021-01-15 01:25:46.408 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/lib/bootstrap/dist/css/bootstrap.min.css  
+2021-01-15 01:25:46.408 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/css/site.css  
+2021-01-15 01:25:46.409 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2021-01-15 01:25:46.411 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/lib/bootstrap/dist/js/bootstrap.bundle.min.js  
+2021-01-15 01:25:46.415 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/lib/jquery/dist/jquery.min.js  
+2021-01-15 01:25:46.424 +02:00 [INF] The file /css/site.css was not modified
+2021-01-15 01:25:46.424 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2021-01-15 01:25:46.424 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2021-01-15 01:25:46.424 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2021-01-15 01:25:46.429 +02:00 [INF] Request finished in 18.3198ms 304 application/javascript
+2021-01-15 01:25:46.429 +02:00 [INF] Request finished in 22.1321ms 304 text/css
+2021-01-15 01:25:46.429 +02:00 [INF] The file /js/site.js was not modified
+2021-01-15 01:25:46.430 +02:00 [INF] Request finished in 20.9715ms 304 application/javascript
+2021-01-15 01:25:46.430 +02:00 [INF] Request finished in 23.1284ms 304 text/css
+2021-01-15 01:25:46.430 +02:00 [INF] Request finished in 15.5169ms 304 application/javascript
+2021-01-15 01:25:48.825 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/Account/Login  
+2021-01-15 01:25:48.834 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2021-01-15 01:25:48.835 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2021-01-15 01:25:48.838 +02:00 [INF] Request finished in 12.8654ms 405 
+2021-01-15 01:32:54.894 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:32:56.161 +02:00 [INF] Executed DbCommand (171ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-01-15 01:32:57.702 +02:00 [INF] Executed DbCommand (1,515ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-01-15 01:32:57.780 +02:00 [INF] User profile is available. Using 'C:\Users\m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-15 01:33:02.584 +02:00 [INF] Migrations
+2021-01-15 01:33:02.603 +02:00 [WRN] 1610594911: Migration_1610594911 (current)
+2021-01-15 01:33:06.298 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/  
+2021-01-15 01:33:06.377 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:33:06.470 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller TestAppRichDomain.UI.Controllers.HomeController (TestAppRichDomain.UI).
+2021-01-15 01:33:06.529 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:33:07.370 +02:00 [INF] Executed DbCommand (471ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Description], [i].[Image], [i].[IsAviable], [i].[Price], [i].[Title]
+FROM [Items] AS [i]
+2021-01-15 01:33:07.597 +02:00 [INF] Executing ViewResult, running view Index.
+2021-01-15 01:33:07.868 +02:00 [INF] Executed ViewResult - view Index executed in 279.0251ms.
+2021-01-15 01:33:07.874 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI) in 1400.9046ms
+2021-01-15 01:33:07.877 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:33:07.889 +02:00 [INF] Request finished in 1594.0642ms 200 text/html; charset=utf-8
+2021-01-15 01:33:24.859 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/Account/Login  
+2021-01-15 01:33:24.890 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AccountController.Login (TestAppRichDomain.UI)'
+2021-01-15 01:33:24.896 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller TestAppRichDomain.UI.Controllers.AccountController (TestAppRichDomain.UI).
+2021-01-15 01:33:29.572 +02:00 [INF] Executing ViewResult, running view Login.
+2021-01-15 01:33:29.705 +02:00 [INF] Executed ViewResult - view Login executed in 138.072ms.
+2021-01-15 01:33:29.706 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.AccountController.Login (TestAppRichDomain.UI) in 4809.787ms
+2021-01-15 01:33:29.706 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.AccountController.Login (TestAppRichDomain.UI)'
+2021-01-15 01:33:29.708 +02:00 [INF] Request finished in 4849.6466ms 200 text/html; charset=utf-8
+2021-01-15 01:33:30.090 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js  
+2021-01-15 01:33:30.091 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/lib/jquery-validation/dist/jquery.validate.min.js  
+2021-01-15 01:33:30.112 +02:00 [INF] The file /lib/jquery-validation/dist/jquery.validate.min.js was not modified
+2021-01-15 01:33:30.117 +02:00 [INF] Request finished in 25.3662ms 304 application/javascript
+2021-01-15 01:33:30.140 +02:00 [INF] The file /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js was not modified
+2021-01-15 01:33:30.141 +02:00 [INF] Request finished in 50.6541ms 304 application/javascript
+2021-01-15 01:33:34.091 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44317/Account/Login application/x-www-form-urlencoded 234
+2021-01-15 01:33:34.097 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AccountController.Login (TestAppRichDomain.UI)'
+2021-01-15 01:33:34.107 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(TestAppRichDomain.UI.Models.LoginModel) on controller TestAppRichDomain.UI.Controllers.AccountController (TestAppRichDomain.UI).
+2021-01-15 01:33:34.241 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:33:34.564 +02:00 [INF] Executed DbCommand (129ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-01-15 01:33:34.786 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2021-01-15 01:33:34.967 +02:00 [INF] Executed DbCommand (114ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-01-15 01:33:34.988 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2021-01-15 01:33:35.021 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2021-01-15 01:33:35.045 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2021-01-15 01:33:35.049 +02:00 [INF] Executing RedirectResult, redirecting to /.
+2021-01-15 01:33:35.049 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.AccountController.Login (TestAppRichDomain.UI) in 942.0488ms
+2021-01-15 01:33:35.049 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.AccountController.Login (TestAppRichDomain.UI)'
+2021-01-15 01:33:35.051 +02:00 [INF] Request finished in 962.9825ms 302 
+2021-01-15 01:33:35.061 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/  
+2021-01-15 01:33:35.066 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:33:35.067 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller TestAppRichDomain.UI.Controllers.HomeController (TestAppRichDomain.UI).
+2021-01-15 01:33:35.071 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:33:35.121 +02:00 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Description], [i].[Image], [i].[IsAviable], [i].[Price], [i].[Title]
+FROM [Items] AS [i]
+2021-01-15 01:33:35.123 +02:00 [INF] Executing ViewResult, running view Index.
+2021-01-15 01:33:35.128 +02:00 [INF] Executed ViewResult - view Index executed in 5.809ms.
+2021-01-15 01:33:35.128 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI) in 61.0385ms
+2021-01-15 01:33:35.129 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:33:35.129 +02:00 [INF] Request finished in 68.0151ms 200 text/html; charset=utf-8
+2021-01-15 01:33:36.777 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/Admin/AddItem  
+2021-01-15 01:33:36.814 +02:00 [INF] Authorization was successful.
+2021-01-15 01:33:36.814 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:33:36.826 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddItem() on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:33:36.830 +02:00 [INF] Executing ViewResult, running view AddItem.
+2021-01-15 01:33:36.888 +02:00 [INF] Executed ViewResult - view AddItem executed in 58.8318ms.
+2021-01-15 01:33:36.888 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI) in 61.6335ms
+2021-01-15 01:33:36.888 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:33:36.889 +02:00 [INF] Request finished in 112.2947ms 200 text/html; charset=utf-8
+2021-01-15 01:33:47.104 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44317/Admin/AddItem application/x-www-form-urlencoded 286
+2021-01-15 01:33:47.128 +02:00 [INF] Authorization was successful.
+2021-01-15 01:33:47.128 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:33:47.144 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddItem(TestAppRichDomain.UI.Models.AddItemModel) on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:42:07.883 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:42:12.130 +02:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-01-15 01:42:13.571 +02:00 [INF] Executed DbCommand (1,397ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-01-15 01:42:13.658 +02:00 [INF] User profile is available. Using 'C:\Users\m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-15 01:42:15.161 +02:00 [INF] Migrations
+2021-01-15 01:42:15.210 +02:00 [WRN] 1610594911: Migration_1610594911 (current)
+2021-01-15 01:42:15.442 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/  
+2021-01-15 01:42:15.640 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:42:15.763 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller TestAppRichDomain.UI.Controllers.HomeController (TestAppRichDomain.UI).
+2021-01-15 01:42:15.813 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:42:16.525 +02:00 [INF] Executed DbCommand (118ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Description], [i].[Image], [i].[IsAviable], [i].[Price], [i].[Title]
+FROM [Items] AS [i]
+2021-01-15 01:42:17.010 +02:00 [INF] Executing ViewResult, running view Index.
+2021-01-15 01:42:17.710 +02:00 [INF] Executed ViewResult - view Index executed in 735.7214ms.
+2021-01-15 01:42:17.715 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI) in 1950.4558ms
+2021-01-15 01:42:17.720 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:42:17.744 +02:00 [INF] Request finished in 2318.6847ms 200 text/html; charset=utf-8
+2021-01-15 01:42:28.908 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/Admin/AddItem  
+2021-01-15 01:42:28.972 +02:00 [INF] Authorization was successful.
+2021-01-15 01:42:28.972 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:42:28.989 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddItem() on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:42:28.994 +02:00 [INF] Executing ViewResult, running view AddItem.
+2021-01-15 01:42:29.190 +02:00 [INF] Executed ViewResult - view AddItem executed in 199.3872ms.
+2021-01-15 01:42:29.190 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI) in 201.5418ms
+2021-01-15 01:42:29.191 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:42:29.191 +02:00 [INF] Request finished in 284.1843ms 200 text/html; charset=utf-8
+2021-01-15 01:42:43.641 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44317/Admin/AddItem application/x-www-form-urlencoded 284
+2021-01-15 01:42:43.749 +02:00 [INF] Authorization was successful.
+2021-01-15 01:42:43.749 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:42:43.789 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddItem(TestAppRichDomain.UI.Models.AddItemModel) on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:43:32.406 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:43:42.337 +02:00 [INF] Executed DbCommand (163ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-01-15 01:43:44.329 +02:00 [INF] Executed DbCommand (1,931ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-01-15 01:43:44.406 +02:00 [INF] User profile is available. Using 'C:\Users\m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-15 01:43:51.610 +02:00 [INF] Migrations
+2021-01-15 01:43:51.632 +02:00 [WRN] 1610594911: Migration_1610594911 (current)
+2021-01-15 01:43:53.569 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/  
+2021-01-15 01:43:54.075 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:43:54.264 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller TestAppRichDomain.UI.Controllers.HomeController (TestAppRichDomain.UI).
+2021-01-15 01:43:54.296 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:43:55.046 +02:00 [INF] Executed DbCommand (352ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Description], [i].[Image], [i].[IsAviable], [i].[Price], [i].[Title]
+FROM [Items] AS [i]
+2021-01-15 01:43:55.748 +02:00 [INF] Executing ViewResult, running view Index.
+2021-01-15 01:43:56.187 +02:00 [INF] Executed ViewResult - view Index executed in 481.4373ms.
+2021-01-15 01:43:56.192 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI) in 1926.7018ms
+2021-01-15 01:43:56.203 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:43:56.225 +02:00 [INF] Request finished in 2665.8437ms 200 text/html; charset=utf-8
+2021-01-15 01:44:07.178 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/Admin/AddItem  
+2021-01-15 01:44:07.236 +02:00 [INF] Authorization was successful.
+2021-01-15 01:44:07.237 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:44:07.255 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddItem() on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:44:07.260 +02:00 [INF] Executing ViewResult, running view AddItem.
+2021-01-15 01:44:07.459 +02:00 [INF] Executed ViewResult - view AddItem executed in 201.328ms.
+2021-01-15 01:44:07.459 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI) in 204.2202ms
+2021-01-15 01:44:07.459 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:44:07.460 +02:00 [INF] Request finished in 282.5017ms 200 text/html; charset=utf-8
+2021-01-15 01:44:21.674 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44317/Admin/AddItem application/x-www-form-urlencoded 284
+2021-01-15 01:44:21.782 +02:00 [INF] Authorization was successful.
+2021-01-15 01:44:21.784 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:44:21.820 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddItem(TestAppRichDomain.UI.Models.AddItemModel) on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:45:42.941 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:45:45.904 +02:00 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-01-15 01:45:47.384 +02:00 [INF] Executed DbCommand (1,452ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-01-15 01:45:47.471 +02:00 [INF] User profile is available. Using 'C:\Users\m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-15 01:45:54.932 +02:00 [INF] Migrations
+2021-01-15 01:45:54.956 +02:00 [WRN] 1610594911: Migration_1610594911 (current)
+2021-01-15 01:45:57.603 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/  
+2021-01-15 01:45:57.792 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:45:57.894 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller TestAppRichDomain.UI.Controllers.HomeController (TestAppRichDomain.UI).
+2021-01-15 01:45:57.942 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:45:58.597 +02:00 [INF] Executed DbCommand (232ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Description], [i].[Image], [i].[IsAviable], [i].[Price], [i].[Title]
+FROM [Items] AS [i]
+2021-01-15 01:45:58.857 +02:00 [INF] Executing ViewResult, running view Index.
+2021-01-15 01:45:59.127 +02:00 [INF] Executed ViewResult - view Index executed in 279.981ms.
+2021-01-15 01:45:59.134 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI) in 1239.0456ms
+2021-01-15 01:45:59.136 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:45:59.159 +02:00 [INF] Request finished in 1567.0965ms 200 text/html; charset=utf-8
+2021-01-15 01:48:10.164 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:48:13.788 +02:00 [INF] Executed DbCommand (129ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-01-15 01:48:15.662 +02:00 [INF] Executed DbCommand (1,828ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-01-15 01:48:15.815 +02:00 [INF] User profile is available. Using 'C:\Users\m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-15 01:48:20.831 +02:00 [INF] Migrations
+2021-01-15 01:48:20.861 +02:00 [WRN] 1610594911: Migration_1610594911 (current)
+2021-01-15 01:48:26.337 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/  
+2021-01-15 01:48:26.605 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:48:26.767 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller TestAppRichDomain.UI.Controllers.HomeController (TestAppRichDomain.UI).
+2021-01-15 01:48:26.851 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:48:28.022 +02:00 [INF] Executed DbCommand (353ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Description], [i].[Image], [i].[IsAviable], [i].[Price], [i].[Title]
+FROM [Items] AS [i]
+2021-01-15 01:48:28.281 +02:00 [INF] Executing ViewResult, running view Index.
+2021-01-15 01:48:28.597 +02:00 [INF] Executed ViewResult - view Index executed in 318.741ms.
+2021-01-15 01:48:28.603 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI) in 1835.3272ms
+2021-01-15 01:48:28.607 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:48:28.636 +02:00 [INF] Request finished in 2312.7381ms 200 text/html; charset=utf-8
+2021-01-15 01:48:31.393 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/Admin/AddItem  
+2021-01-15 01:48:31.436 +02:00 [INF] Authorization was successful.
+2021-01-15 01:48:31.437 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:48:31.465 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddItem() on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:48:31.469 +02:00 [INF] Executing ViewResult, running view AddItem.
+2021-01-15 01:48:31.676 +02:00 [INF] Executed ViewResult - view AddItem executed in 209.5135ms.
+2021-01-15 01:48:31.677 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI) in 211.7116ms
+2021-01-15 01:48:31.677 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:48:31.677 +02:00 [INF] Request finished in 292.1941ms 200 text/html; charset=utf-8
+2021-01-15 01:48:50.425 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44317/Admin/AddItem application/x-www-form-urlencoded 284
+2021-01-15 01:48:50.514 +02:00 [INF] Authorization was successful.
+2021-01-15 01:48:50.514 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:48:50.579 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddItem(TestAppRichDomain.UI.Models.AddItemModel) on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:51:29.015 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:51:32.048 +02:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-01-15 01:51:33.802 +02:00 [INF] Executed DbCommand (1,731ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-01-15 01:51:33.886 +02:00 [INF] User profile is available. Using 'C:\Users\m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-15 01:51:36.835 +02:00 [INF] Migrations
+2021-01-15 01:51:36.853 +02:00 [WRN] 1610594911: Migration_1610594911 (current)
+2021-01-15 01:51:37.660 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/  
+2021-01-15 01:51:37.781 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:51:37.885 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller TestAppRichDomain.UI.Controllers.HomeController (TestAppRichDomain.UI).
+2021-01-15 01:51:37.926 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:51:38.618 +02:00 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Description], [i].[Image], [i].[IsAviable], [i].[Price], [i].[Title]
+FROM [Items] AS [i]
+2021-01-15 01:51:38.834 +02:00 [INF] Executing ViewResult, running view Index.
+2021-01-15 01:51:39.079 +02:00 [INF] Executed ViewResult - view Index executed in 246.2958ms.
+2021-01-15 01:51:39.083 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI) in 1196.8658ms
+2021-01-15 01:51:39.085 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:51:39.098 +02:00 [INF] Request finished in 1449.4268ms 200 text/html; charset=utf-8
+2021-01-15 01:51:46.085 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/Admin/AddItem  
+2021-01-15 01:51:46.118 +02:00 [INF] Authorization was successful.
+2021-01-15 01:51:46.119 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:51:46.129 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddItem() on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:51:46.133 +02:00 [INF] Executing ViewResult, running view AddItem.
+2021-01-15 01:51:46.282 +02:00 [INF] Executed ViewResult - view AddItem executed in 150.9897ms.
+2021-01-15 01:51:46.283 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI) in 153.1018ms
+2021-01-15 01:51:46.283 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:51:46.283 +02:00 [INF] Request finished in 199.2348ms 200 text/html; charset=utf-8
+2021-01-15 01:51:59.376 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44317/Admin/AddItem application/x-www-form-urlencoded 284
+2021-01-15 01:51:59.425 +02:00 [INF] Authorization was successful.
+2021-01-15 01:51:59.425 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:51:59.444 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddItem(TestAppRichDomain.UI.Models.AddItemModel, Microsoft.AspNetCore.Http.IFormFile) on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:52:14.244 +02:00 [INF] Executing ViewResult, running view AddItem.
+2021-01-15 01:52:14.263 +02:00 [INF] Executed ViewResult - view AddItem executed in 19.8511ms.
+2021-01-15 01:52:14.264 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI) in 14819.6365ms
+2021-01-15 01:52:14.264 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:52:14.264 +02:00 [INF] Request finished in 14898.8727ms 200 text/html; charset=utf-8
+2021-01-15 01:52:14.276 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/lib/bootstrap/dist/css/bootstrap.min.css.map  
+2021-01-15 01:52:14.496 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map  
+2021-01-15 01:52:15.234 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/lib/bootstrap/dist/css/bootstrap.min.css.map  
+2021-01-15 01:52:15.308 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map  
+2021-01-15 01:52:15.472 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Users\m\source\repos\TestAppRichDomain\TestAppRichDomain.UI\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map'
+2021-01-15 01:52:15.472 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Users\m\source\repos\TestAppRichDomain\TestAppRichDomain.UI\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map'
+2021-01-15 01:52:15.473 +02:00 [INF] Request finished in 164.8537ms 200 text/plain
+2021-01-15 01:52:15.473 +02:00 [INF] Request finished in 976.5369ms 200 text/plain
+2021-01-15 01:52:15.495 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css.map'. Physical path: 'C:\Users\m\source\repos\TestAppRichDomain\TestAppRichDomain.UI\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map'
+2021-01-15 01:52:15.496 +02:00 [INF] Request finished in 262.5572ms 200 text/plain
+2021-01-15 01:52:15.506 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css.map'. Physical path: 'C:\Users\m\source\repos\TestAppRichDomain\TestAppRichDomain.UI\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map'
+2021-01-15 01:52:15.506 +02:00 [INF] Request finished in 1230.3803ms 200 text/plain
+2021-01-15 01:52:27.174 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44317/Admin/AddItem application/x-www-form-urlencoded 361
+2021-01-15 01:52:27.194 +02:00 [INF] Authorization was successful.
+2021-01-15 01:52:27.195 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:52:27.197 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddItem(TestAppRichDomain.UI.Models.AddItemModel, Microsoft.AspNetCore.Http.IFormFile) on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:53:24.631 +02:00 [INF] Executing ViewResult, running view AddItem.
+2021-01-15 01:53:24.649 +02:00 [INF] Executed ViewResult - view AddItem executed in 102.6983ms.
+2021-01-15 01:53:24.655 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI) in 57457.9263ms
+2021-01-15 01:53:24.656 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:53:24.656 +02:00 [INF] Request finished in 57482.4731ms 200 text/html; charset=utf-8
+2021-01-15 01:53:25.561 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/lib/bootstrap/dist/css/bootstrap.min.css.map  
+2021-01-15 01:53:25.768 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map  
+2021-01-15 01:53:25.837 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Users\m\source\repos\TestAppRichDomain\TestAppRichDomain.UI\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map'
+2021-01-15 01:53:25.838 +02:00 [INF] Request finished in 69.888ms 200 text/plain
+2021-01-15 01:53:25.881 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css.map'. Physical path: 'C:\Users\m\source\repos\TestAppRichDomain\TestAppRichDomain.UI\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map'
+2021-01-15 01:53:25.881 +02:00 [INF] Request finished in 320.4103ms 200 text/plain
+2021-01-15 01:56:22.106 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:56:27.547 +02:00 [INF] Executed DbCommand (150ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-01-15 01:56:28.927 +02:00 [INF] Executed DbCommand (1,348ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-01-15 01:56:29.006 +02:00 [INF] User profile is available. Using 'C:\Users\m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-15 01:56:32.561 +02:00 [INF] Migrations
+2021-01-15 01:56:32.584 +02:00 [WRN] 1610594911: Migration_1610594911 (current)
+2021-01-15 01:56:34.096 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/  
+2021-01-15 01:56:34.239 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:56:34.336 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller TestAppRichDomain.UI.Controllers.HomeController (TestAppRichDomain.UI).
+2021-01-15 01:56:34.377 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:56:34.920 +02:00 [INF] Executed DbCommand (168ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Description], [i].[Image], [i].[IsAviable], [i].[Price], [i].[Title]
+FROM [Items] AS [i]
+2021-01-15 01:56:35.151 +02:00 [INF] Executing ViewResult, running view Index.
+2021-01-15 01:56:35.461 +02:00 [INF] Executed ViewResult - view Index executed in 316.8658ms.
+2021-01-15 01:56:35.466 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI) in 1129.5548ms
+2021-01-15 01:56:35.468 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:56:35.491 +02:00 [INF] Request finished in 1405.0089ms 200 text/html; charset=utf-8
+2021-01-15 01:56:48.197 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/Admin/AddItem  
+2021-01-15 01:56:48.254 +02:00 [INF] Authorization was successful.
+2021-01-15 01:56:48.255 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:56:48.269 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddItem() on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:56:48.281 +02:00 [INF] Executing ViewResult, running view AddItem.
+2021-01-15 01:56:48.515 +02:00 [INF] Executed ViewResult - view AddItem executed in 243.6408ms.
+2021-01-15 01:56:48.516 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI) in 246.2598ms
+2021-01-15 01:56:48.516 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:56:48.516 +02:00 [INF] Request finished in 320.2205ms 200 text/html; charset=utf-8
+2021-01-15 01:57:00.967 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44317/Admin/AddItem application/x-www-form-urlencoded 360
+2021-01-15 01:57:01.045 +02:00 [INF] Authorization was successful.
+2021-01-15 01:57:01.045 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:57:01.079 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddItem(TestAppRichDomain.UI.Models.AddItemModel, Microsoft.AspNetCore.Http.IFormFile) on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:57:56.742 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:57:59.538 +02:00 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-01-15 01:58:01.392 +02:00 [INF] Executed DbCommand (1,825ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-01-15 01:58:01.495 +02:00 [INF] User profile is available. Using 'C:\Users\m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-15 01:58:56.710 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:59:02.048 +02:00 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-01-15 01:59:03.344 +02:00 [INF] Executed DbCommand (1,265ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-01-15 01:59:03.425 +02:00 [INF] User profile is available. Using 'C:\Users\m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-15 01:59:07.790 +02:00 [INF] Migrations
+2021-01-15 01:59:07.805 +02:00 [WRN] 1610594911: Migration_1610594911 (current)
+2021-01-15 01:59:11.757 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/  
+2021-01-15 01:59:11.890 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:59:11.987 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller TestAppRichDomain.UI.Controllers.HomeController (TestAppRichDomain.UI).
+2021-01-15 01:59:12.025 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'SiteContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=TestAppRichDomain.Infrastructure 
+2021-01-15 01:59:12.798 +02:00 [INF] Executed DbCommand (355ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Description], [i].[Image], [i].[IsAviable], [i].[Price], [i].[Title]
+FROM [Items] AS [i]
+2021-01-15 01:59:12.991 +02:00 [INF] Executing ViewResult, running view Index.
+2021-01-15 01:59:13.235 +02:00 [INF] Executed ViewResult - view Index executed in 242.3053ms.
+2021-01-15 01:59:13.240 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI) in 1252.0276ms
+2021-01-15 01:59:13.242 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.HomeController.Index (TestAppRichDomain.UI)'
+2021-01-15 01:59:13.280 +02:00 [INF] Request finished in 1526.086ms 200 text/html; charset=utf-8
+2021-01-15 01:59:17.492 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44317/Admin/AddItem  
+2021-01-15 01:59:17.543 +02:00 [INF] Authorization was successful.
+2021-01-15 01:59:17.544 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:59:17.552 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddItem() on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).
+2021-01-15 01:59:17.557 +02:00 [INF] Executing ViewResult, running view AddItem.
+2021-01-15 01:59:17.676 +02:00 [INF] Executed ViewResult - view AddItem executed in 120.9938ms.
+2021-01-15 01:59:17.676 +02:00 [INF] Executed action TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI) in 123.1848ms
+2021-01-15 01:59:17.676 +02:00 [INF] Executed endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:59:17.676 +02:00 [INF] Request finished in 185.2088ms 200 text/html; charset=utf-8
+2021-01-15 01:59:33.668 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44317/Admin/AddItem multipart/form-data; boundary=----WebKitFormBoundaryKiUilAKAqz1rzJI9 8609
+2021-01-15 01:59:33.704 +02:00 [INF] Authorization was successful.
+2021-01-15 01:59:33.704 +02:00 [INF] Executing endpoint 'TestAppRichDomain.UI.Controllers.AdminController.AddItem (TestAppRichDomain.UI)'
+2021-01-15 01:59:33.724 +02:00 [INF] Route matched with {action = "AddItem", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddItem(TestAppRichDomain.UI.Models.AddItemModel, Microsoft.AspNetCore.Http.IFormFile) on controller TestAppRichDomain.UI.Controllers.AdminController (TestAppRichDomain.UI).

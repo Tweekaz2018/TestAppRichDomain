@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TestAppRichDomain.Shared;
 
 namespace TestAppRichDomain.Core.Entries
 {
@@ -9,8 +10,8 @@ namespace TestAppRichDomain.Core.Entries
     {
         public string UserId { get; private set; }
 
-        private readonly List<BasketItem> _items = new List<BasketItem>();
-        public IReadOnlyCollection<BasketItem> Items => _items.AsReadOnly();
+        private readonly List<BasketItem> _basketItems = new List<BasketItem>();
+        public IReadOnlyCollection<BasketItem> BasketItems => _basketItems.AsReadOnly();
 
 
         public Basket(string userId)
@@ -20,14 +21,17 @@ namespace TestAppRichDomain.Core.Entries
 
         public void AddItem(int itemId, decimal price, int quantity = 1)
         {
-            var item = Items.FirstOrDefault(x => x.ItemId == itemId);
+            var item = BasketItems.FirstOrDefault(x => x.ItemId == itemId);
             if (item != null)
                 item.AddQuantity(quantity);
-            _items.Add(new BasketItem(itemId, quantity, price));
+            else
+                _basketItems.Add(new BasketItem(itemId, quantity, price, Id));
         }
-        public void RemoveEmptyItems()
+        public void RemoveItem(int itemId)
         {
-            _items.RemoveAll(i => i.Quantity == 0);
+            var item = BasketItems.FirstOrDefault(x => x.ItemId == itemId);
+            if (item != null)
+                _basketItems.Remove(item);
         }
     }
 }

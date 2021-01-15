@@ -24,7 +24,7 @@ namespace TestAppRichDomain.Infrastructure.Config
 
             builder.Property(x => x.Description)
                 .IsRequired(true)
-                .HasMaxLength(100);
+                .HasMaxLength(1000);
         }
     }
 }

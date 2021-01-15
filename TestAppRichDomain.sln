@@ -5,12 +5,22 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppRichDomain.Core", "TestAppRichDomain\TestAppRichDomain.Core.csproj", "{1B999A4C-8EEF-46F7-9830-F1324CF99994}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppRichDomain.Repository", "TestAppRichDomain.Infrastructure\TestAppRichDomain.Repository.csproj", "{54DAF0C1-2338-4757-BD68-B8DFEAF00B1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppRichDomain.Infrastructure", "TestAppRichDomain.Infrastructure\TestAppRichDomain.Infrastructure.csproj", "{54DAF0C1-2338-4757-BD68-B8DFEAF00B1F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1B999A4C-8EEF-46F7-9830-F1324CF99994} = {1B999A4C-8EEF-46F7-9830-F1324CF99994}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppRichDomain.Services", "TestAppRichDomain.Services\TestAppRichDomain.Services.csproj", "{3B0B09B9-23D0-49DA-903D-F86C60FFCB20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppRichDomain.Shared", "Shared\TestAppRichDomain.Shared.csproj", "{1E9A6EE1-FCD9-43F6-A973-C4EF6B0F0C73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppRichDomain.UI", "TestAppRichDomain.UI\TestAppRichDomain.UI.csproj", "{3DD985CD-A5C8-4C86-9D56-F7E1AD7FFBC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp.UnitTests", "TestApp.UnitTests\TestApp.UnitTests.csproj", "{DD64E2F3-2EAA-4694-BC13-1585A493C8F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp.IntegrationTests", "TestApp.IntegrationTests\TestApp.IntegrationTests.csproj", "{96044056-252F-49BC-9C02-7EAC52D5CFC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp.FunctionalTests", "TestApp.FunctionalTests\TestApp.FunctionalTests.csproj", "{A9B0A2D8-DDC5-4F4C-B5BF-E65576167B3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordCrypter", "PasswordCrypter\PasswordCrypter.csproj", "{2568F0A9-5D2F-4D97-8353-AB095E2AACE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +36,30 @@ Global
 		{54DAF0C1-2338-4757-BD68-B8DFEAF00B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54DAF0C1-2338-4757-BD68-B8DFEAF00B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54DAF0C1-2338-4757-BD68-B8DFEAF00B1F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B0B09B9-23D0-49DA-903D-F86C60FFCB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B0B09B9-23D0-49DA-903D-F86C60FFCB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B0B09B9-23D0-49DA-903D-F86C60FFCB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B0B09B9-23D0-49DA-903D-F86C60FFCB20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E9A6EE1-FCD9-43F6-A973-C4EF6B0F0C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E9A6EE1-FCD9-43F6-A973-C4EF6B0F0C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E9A6EE1-FCD9-43F6-A973-C4EF6B0F0C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E9A6EE1-FCD9-43F6-A973-C4EF6B0F0C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD985CD-A5C8-4C86-9D56-F7E1AD7FFBC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD985CD-A5C8-4C86-9D56-F7E1AD7FFBC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD985CD-A5C8-4C86-9D56-F7E1AD7FFBC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD985CD-A5C8-4C86-9D56-F7E1AD7FFBC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD64E2F3-2EAA-4694-BC13-1585A493C8F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD64E2F3-2EAA-4694-BC13-1585A493C8F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD64E2F3-2EAA-4694-BC13-1585A493C8F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD64E2F3-2EAA-4694-BC13-1585A493C8F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96044056-252F-49BC-9C02-7EAC52D5CFC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96044056-252F-49BC-9C02-7EAC52D5CFC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96044056-252F-49BC-9C02-7EAC52D5CFC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96044056-252F-49BC-9C02-7EAC52D5CFC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9B0A2D8-DDC5-4F4C-B5BF-E65576167B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B0A2D8-DDC5-4F4C-B5BF-E65576167B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B0A2D8-DDC5-4F4C-B5BF-E65576167B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B0A2D8-DDC5-4F4C-B5BF-E65576167B3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2568F0A9-5D2F-4D97-8353-AB095E2AACE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2568F0A9-5D2F-4D97-8353-AB095E2AACE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2568F0A9-5D2F-4D97-8353-AB095E2AACE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2568F0A9-5D2F-4D97-8353-AB095E2AACE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

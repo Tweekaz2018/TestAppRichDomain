@@ -11,13 +11,18 @@ namespace TestAppRichDomain.Infrastructure.Config
     {
         public void Configure(EntityTypeBuilder<OrderItem> builder)
         {
-            builder.Property(x => x.ItemOrdered)
-                .IsRequired(true);
+            builder.OwnsOne(x => x.Item, x =>
+              {
+                  x.WithOwner();
+                  x.Property(x => x.Title)
+                  .HasMaxLength(50)
+                  .IsRequired();
+
+                  x.Property(x => x.ItemId)
+                  .IsRequired();
+              });
 
             builder.Property(x => x.Quantity)
-                .IsRequired(true);
-
-            builder.Property(x => x.Title)
                 .IsRequired(true);
 
             builder.Property(x => x.Price)

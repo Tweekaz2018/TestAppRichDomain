@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TestAppRichDomain.Shared;
 
 namespace TestAppRichDomain.Core.Entries
 {
@@ -11,10 +12,10 @@ namespace TestAppRichDomain.Core.Entries
         public int ItemId { get; private set; }
         public int BasketId { get; private set; }
 
-        public BasketItem(int itemId, int quantity, decimal price)
+        public BasketItem(int itemId, int quantity, decimal price, int basketId)
         {
             ItemId = itemId;
-            //BasketId = basketId;
+            BasketId = basketId;
             Quantity = quantity;
             Price = price;
         }
@@ -22,10 +23,6 @@ namespace TestAppRichDomain.Core.Entries
         public void AddQuantity(int quantity)
         {
             Quantity += quantity;
-        }
-        public void SetQuantity(int quantity)
-        {
-            Quantity = quantity;
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestAppRichDomain.Core;
+using TestAppRichDomain.Shared;
 
 namespace TestAppRichDomain.Infrastructure
 {
@@ -25,12 +26,12 @@ namespace TestAppRichDomain.Infrastructure
             return await _dbContext.Set<T>().FindAsync(keyValues);
         }
 
-        public async Task<IReadOnlyList<T>> ListAllAsync()
+        public async Task<IEnumerable<T>> ListAllAsync()
         {
             return await _dbContext.Set<T>().ToListAsync();
         }
 
-        public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
+        public async Task<IEnumerable<T>> ListAsync(ISpecification<T> spec)
         {
             var specificationResult = ApplySpecification(spec);
             return await specificationResult.ToListAsync();

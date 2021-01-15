@@ -1,0 +1,53 @@
+﻿@model BasketModel
+@{ 
+    ViewData["Title"] = "Basket";
+}
+    <div class="row">
+        <div class="col-3">
+            <form asp-action="MakeOrder">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="BasketId" value="@Model.BasketId" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" required />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Comment" class="control-label"></label>
+                    <input asp-for="Comment" class="form-control" />
+                    <span asp-validation-for="Comment" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Make Order" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+        <div class="col-9">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Quantity</td>
+                        <td>Price</td>
+                        <td>Full price</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.BasketItems)
+                    {
+                        <tr>
+                            <td><a asp-controller="Home" asp-action="Item" asp-route-id="@item.ItemId" target="_blank">@item.Title</a></td>
+                            <td>@item.Quantity &nbsp; <a asp-controller="Basket" asp-action="AddItem" asp-route-itemId="@item.ItemId">+</a></td>
+                            <td>@item.Price</td>
+                            <td>@(Math.Round(item.Quantity * item.Price, 2))</td>
+                            <td><a asp-controller="Basket" asp-action="RemoveItem" asp-route-itemId="@item.ItemId" class="btn btn-outline-danger">Remove</a></td>
+                        </tr>
+                    }
+                    <tr><td></td><td></td><td></td><td>@Math.Round(Model.BasketItems.Sum(x => x.Quantity * x.Price), 2)</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

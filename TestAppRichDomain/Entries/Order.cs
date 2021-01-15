@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TestAppRichDomain.Shared;
 
 namespace TestAppRichDomain.Core.Entries
 {
     public class Order : BaseEntity
     {
         public string UserId { get; private set; }
-        public OrderDevileryType OrderDevileryType { get; private set; }
         public DateTime OrderDate { get; private set; } = DateTime.Now;
 
         public string Address { get; private set; }
@@ -22,16 +22,14 @@ namespace TestAppRichDomain.Core.Entries
             //Ef
         }
 
-        public Order(string userId, OrderDevileryType orderDevileryType, string address, string comment, List<OrderItem> orderItems)
+        public Order(string userId,string address, string comment, List<OrderItem> orderItems)
         {
             UserId = userId;
             Comment = comment;
-            OrderDevileryType = orderDevileryType;
             Address = address;
             _orderItems = orderItems;
         }
 
-        public decimal OrderTotal => _orderItems.Sum(x => x.Price * x.Quantity);
 
     }
 }

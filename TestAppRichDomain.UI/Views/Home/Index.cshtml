@@ -1,0 +1,53 @@
+﻿@model PageViewModel<TestAppRichDomain.UI.Models.ItemModel>
+@{
+    ViewData["Title"] = "Items";
+}
+@if (User.IsInRole("Admin"))
+{
+    <a asp-controller="Admin" asp-action="AddItem" class="btn btn-outline-primary">Add item</a>
+}
+
+<div class="col-12">
+    @{
+        int i = 0;
+        foreach (var item in Model.list)
+        {
+            if (i == 0)
+            {
+                @: <div class="card">
+                }
+                <img class="card-img-top" src="@item.Image" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">@item.Description</p>
+                    <a asp-controller="Home" asp-action="Item" asp-route-id="@item.Id" class="btn btn-outline-dark">Details</a>
+                </div>
+                i = i + 1;
+                @if (i == 1)
+                {
+                @: </div>
+                i = 0;
+            }
+            }
+    }
+</div>
+
+
+@if (Model.HasPreviousPage)
+{
+    <a asp-action="Index"
+       asp-route-page="@(Model.PageNumber - 1)"
+       class="btn btn-outline-dark">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Back
+    </a>
+}
+@if (Model.HasNextPage)
+{
+    <a asp-action="Index"
+       asp-route-page="@(Model.PageNumber + 1)"
+       class="btn btn-outline-dark">
+        Next
+        <i class="glyphicon glyphicon-chevron-right"></i>
+    </a>
+}

@@ -15,7 +15,10 @@ namespace TestAppRichDomain.Infrastructure.Config
 
             navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
 
-            builder.HasOne(X => X.OrderDevileryType);
+            builder.Property(x => x.Address)
+                .IsRequired();
+            builder.Property(x => x.Comment)
+                .IsRequired(false);
         }
     }
 }
