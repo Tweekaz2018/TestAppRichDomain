@@ -17,6 +17,7 @@ namespace PasswordCrypter
             string cryptedString = Encrypt(originalString);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nEncrypt Result: {0}", cryptedString);
+            Console.Read();
         }
         public static string Encrypt(string originalString)
         {
