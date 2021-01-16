@@ -10,12 +10,7 @@ namespace FluentMigrator.CreateDBAndData.Migrations
     {
         public override void Down()
         {
-            Delete.Table("Items");
-            Delete.Table("Baskets");
-            Delete.Table("BasketItems");
-            Delete.Table("Orders");
-            Delete.Table("OrderItems");
-            Delete.Table("Items");
+            Execute.Sql("DROP DATABASE siteDB");
         }
 
         public override void Up()

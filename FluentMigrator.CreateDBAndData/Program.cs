@@ -51,6 +51,7 @@ namespace FluentMigrator.CreateDBAndData
         {
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
             runner.ListMigrations();
+
             runner.MigrateUp();
         }
     }
