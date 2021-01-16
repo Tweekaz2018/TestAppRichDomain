@@ -33,9 +33,12 @@ namespace TestAppRichDomain.UI
                 var loggerFactory = services.GetRequiredService<ILoggerFactory>();
                 try
                 {
-                    var catalogContext = services.GetRequiredService<SiteContext>();
-                    var isDbCreated = catalogContext.Database.EnsureCreated();
-                    if (isDbCreated)
+                    var siteContext = services.GetRequiredService<SiteContext>();
+                    if(siteContext.Database.EnsureCreated())
+                    {
+                        await DataBaseSeed.SeedShopAsync(siteContext);
+                    }
+                    if (!siteContext.Users.Any())
                     {
                         var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
                         var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
@@ -44,7 +47,7 @@ namespace TestAppRichDomain.UI
                 }
                 catch (Exception ex)
                 {
-                    Log.Error(ex, "");
+                    Log.Error(ex, "Cant create users");
                 }
             }
            host.Run();

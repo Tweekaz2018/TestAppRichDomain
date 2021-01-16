@@ -6,7 +6,7 @@ using TestAppRichDomain.Core.Entries;
 using TestAppRichDomain.Core.Specification;
 using Xunit;
 
-namespace TestApp.IntegrationTests
+namespace TestApp.IntegrationTests.Repository_Tests
 {
     public class Repository_Order_Tests : RepoTestFixture<Order>
     {

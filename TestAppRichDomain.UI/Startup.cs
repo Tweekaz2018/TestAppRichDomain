@@ -1,13 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using AutoMapper;
-using FluentMigrator.Runner;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -47,14 +39,6 @@ namespace TestAppRichDomain.UI
                 connString = Configuration.GetConnectionString("Default");
             }
             services.AddControllersWithViews();
-            //Fluent Migrator
-            services.AddLogging(c => c.AddFluentMigratorConsole())
-            .AddFluentMigratorCore()
-            .ConfigureRunner(c => c
-            .AddSqlServer()
-            .WithGlobalConnectionString(connString)
-            .ScanIn(Assembly.GetExecutingAssembly()).For.All());
-            //Db
             services.AddDbContext<SiteContext>(options => options.UseSqlServer(connString,
                     x => x.MigrationsAssembly("TestAppRichDomain.Infrastructure")));
             //Identity
@@ -96,10 +80,6 @@ namespace TestAppRichDomain.UI
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-            if (env.EnvironmentName != "Test")
-            {
-                app.Migrate();
-            }
         }
     }
 }

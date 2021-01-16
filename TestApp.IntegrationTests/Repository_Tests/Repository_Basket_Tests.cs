@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TestAppRichDomain.Core.Entries;
 using Xunit;
 
-namespace TestApp.IntegrationTests
+namespace TestApp.IntegrationTests.Repository_Tests
 {
     public class Repository_Basket_Tests : RepoTestFixture<Basket>
     {
