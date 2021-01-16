@@ -20,9 +20,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.IntegrationTests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.FunctionalTests", "TestApp.FunctionalTests\TestApp.FunctionalTests.csproj", "{A9B0A2D8-DDC5-4F4C-B5BF-E65576167B3A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PasswordCrypter", "PasswordCrypter\PasswordCrypter.csproj", "{2568F0A9-5D2F-4D97-8353-AB095E2AACE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.PasswordCrypter", "PasswordCrypter\TestApp.PasswordCrypter.csproj", "{2568F0A9-5D2F-4D97-8353-AB095E2AACE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMigrator.CreateDBAndData", "FluentMigrator.CreateDBAndData\FluentMigrator.CreateDBAndData.csproj", "{8C6FF066-A990-424A-BC52-C4FB47D01DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentMigrator.CreateDBAndData", "FluentMigrator.CreateDBAndData\FluentMigrator.CreateDBAndData.csproj", "{8C6FF066-A990-424A-BC52-C4FB47D01DF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
