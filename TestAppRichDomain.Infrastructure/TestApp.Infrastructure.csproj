@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestAppRichDomain\TestAppRichDomain.Core.csproj" />
+    <ProjectReference Include="..\TestAppRichDomain\TestApp.Core.csproj" />
   </ItemGroup>
 
 </Project>

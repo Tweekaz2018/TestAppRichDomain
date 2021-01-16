@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppRichDomain.Core", "TestAppRichDomain\TestAppRichDomain.Core.csproj", "{1B999A4C-8EEF-46F7-9830-F1324CF99994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.Core", "TestAppRichDomain\TestApp.Core.csproj", "{1B999A4C-8EEF-46F7-9830-F1324CF99994}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppRichDomain.Infrastructure", "TestAppRichDomain.Infrastructure\TestAppRichDomain.Infrastructure.csproj", "{54DAF0C1-2338-4757-BD68-B8DFEAF00B1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.Infrastructure", "TestAppRichDomain.Infrastructure\TestApp.Infrastructure.csproj", "{54DAF0C1-2338-4757-BD68-B8DFEAF00B1F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1B999A4C-8EEF-46F7-9830-F1324CF99994} = {1B999A4C-8EEF-46F7-9830-F1324CF99994}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppRichDomain.Shared", "Shared\TestAppRichDomain.Shared.csproj", "{1E9A6EE1-FCD9-43F6-A973-C4EF6B0F0C73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.Shared", "Shared\TestApp.Shared.csproj", "{1E9A6EE1-FCD9-43F6-A973-C4EF6B0F0C73}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppRichDomain.UI", "TestAppRichDomain.UI\TestAppRichDomain.UI.csproj", "{3DD985CD-A5C8-4C86-9D56-F7E1AD7FFBC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.UI", "TestAppRichDomain.UI\TestApp.UI.csproj", "{3DD985CD-A5C8-4C86-9D56-F7E1AD7FFBC0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.UnitTests", "TestApp.UnitTests\TestApp.UnitTests.csproj", "{DD64E2F3-2EAA-4694-BC13-1585A493C8F5}"
 EndProject
@@ -22,7 +22,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.FunctionalTests", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.PasswordCrypter", "PasswordCrypter\TestApp.PasswordCrypter.csproj", "{2568F0A9-5D2F-4D97-8353-AB095E2AACE3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentMigrator.CreateDBAndData", "FluentMigrator.CreateDBAndData\FluentMigrator.CreateDBAndData.csproj", "{8C6FF066-A990-424A-BC52-C4FB47D01DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.FluentMigrator.CreateDBAndData", "FluentMigrator.CreateDBAndData\TestApp.FluentMigrator.CreateDBAndData.csproj", "{8C6FF066-A990-424A-BC52-C4FB47D01DF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

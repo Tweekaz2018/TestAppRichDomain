@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestAppRichDomain.UI\TestAppRichDomain.UI.csproj" />
-    <ProjectReference Include="..\TestAppRichDomain\TestAppRichDomain.Core.csproj" />
+    <ProjectReference Include="..\TestAppRichDomain.UI\TestApp.UI.csproj" />
+    <ProjectReference Include="..\TestAppRichDomain\TestApp.Core.csproj" />
   </ItemGroup>
 
 </Project>
